@@ -1,0 +1,28 @@
+import React, { useEffect, useState } from "react";
+import logo from "../images/logo.png";
+import "../css/header.css";
+import { Link, useLocation } from "react-router-dom";
+
+function HeaderLanding() {
+  const [headerClassName, setHeader] = useState("header");
+  const location = useLocation();
+  useEffect(() => {
+    const handler = () => {
+      let newClassName =
+        window.pageYOffset > 20 ? "header headerHover" : "header";
+      setHeader(newClassName);
+    };
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
+  return (
+    <div className={headerClassName}>
+      <Link to="/">
+        <img src={logo} className="headerLogo" />
+      </Link>
+    </div>
+  );
+}
+
+export default HeaderLanding;
