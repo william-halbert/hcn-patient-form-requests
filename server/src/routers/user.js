@@ -3,22 +3,12 @@ const multer = require("multer");
 const sharp = require("sharp");
 const User = require("../models/user");
 const auth = require("../middleware/auth");
+const fs = require("fs");
+const path = require("path");
 //const { sendWelcomeEmail, sendCancelationEmail } = require("../emails/account");
 const router = new express.Router();
 
 //sendWelcomeEmail(user.email, user.name);
-
-router.post("/food-and-formula", async (req, res) => {
-  //const user = new User(req.body);
-
-  try {
-    //await user.save();
-    const token = await user.generateAuthToken();
-    res.status(201).send({ user, token });
-  } catch (e) {
-    res.status(400).send(e);
-  }
-});
 
 router.post("/users/login", async (req, res) => {
   try {

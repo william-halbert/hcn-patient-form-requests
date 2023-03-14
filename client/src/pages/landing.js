@@ -20,38 +20,6 @@ function Landing() {
     setFormChoice(e.target.value);
   }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault(); /*
-    fetch("http://127.0.0.1:4000/users/me", {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: location.state.token,
-      },
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        organization,
-      }),
-    })
-      .then((res) => console.log(res))
-      .then(() => {
-        navigate(
-          "../signup/primary-use",
-          {
-            state: {
-              email: location.state.email,
-              firstName,
-              lastName,
-              token: location.state.token,
-            },
-          },
-          { replace: true }
-        );
-      })
-      .catch((error) => {});*/
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -78,9 +46,6 @@ function Landing() {
             <option value="formulaAndFood">
               Medical Documentation for Formula and Food
             </option>
-            <option value="naplesEquestrianChallenge">
-              Naples Therapeutic Riding Center equine therapeutic riding program
-            </option>
           </select>
           <Form formChoice={formChoice} />
         </div>
@@ -90,3 +55,7 @@ function Landing() {
 }
 
 export default Landing;
+
+/*<option value="naplesEquestrianChallenge">
+              Naples Therapeutic Riding Center equine therapeutic riding program
+            </option>*/

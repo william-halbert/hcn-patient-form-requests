@@ -13,6 +13,7 @@ topHeader: hsla(253, 56%, 51%, 1);
 textGrey: #3D3D3D;
 light oragne for button first color: #cc8472;
 */
+
 .formField {
   text-align: center;
   width: 50vw;
@@ -39,6 +40,9 @@ light oragne for button first color: #cc8472;
 .defaultSelect:focus {
   outline: none;
   border: 2px solid #ef5623ff;
+}
+.noTopMargin {
+  margin: 10px;
 }
 .defaultBtn {
   display: inline-block;
